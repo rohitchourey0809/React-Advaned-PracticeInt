@@ -67,6 +67,7 @@ const Signupreact = () => {
       }).catch((error) => {
         // User couldn't sign in (bad verification code?)
         // ...
+        alert(error)
       });
     }
   };
@@ -121,8 +122,9 @@ const Signupreact = () => {
                   className="form-control"
                   id="otpinput"
                   value={otp}
-                  onChange={VerifyOtp}
+                  onChange={(e)=>SetOtp(e.target.value)}
                 />
+                <input onClick={VerifyOtp}type="submit">Verify Otp</input>
                 <div id="otpHelp" className="form-text">
                   Please Enter One time Otp
                 </div>
